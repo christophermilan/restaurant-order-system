@@ -1,0 +1,17 @@
+html
+	head
+		title= order.restaurantName
+		
+	body
+		include ../partials/header
+		h2 Order##{order._id}
+		div Restaurant: #{order.restaurantName}
+		br
+		div Order Contents:
+		each value in order.order
+			div #{value.name} x #{value.quantity}
+		br
+		div Subtotal: #{order.subtotal}
+		div Tax: #{order.tax}
+		div Delivery Fee: #{order.fee}
+		div Total: #{order.total}

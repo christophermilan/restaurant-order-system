@@ -1,0 +1,23 @@
+html
+	head
+		title= user.username
+		
+	body
+		include ../partials/header
+		if userOwnProfile
+			h3 Privacy Mode:
+			form(action='/users/' + id method='post')
+				input(type='radio' name='privacy' value='on')
+				label(for='On') On
+				br
+				input(type='radio' name='privacy' value='off')
+				label(for='Off') Off
+				br
+				button(type='submit') Save
+		h2= user.username
+		p= "Order History:"
+		each order in orders
+			a(href="http://localhost:3000/orders/" +  order) #{order}
+			br
+
+	

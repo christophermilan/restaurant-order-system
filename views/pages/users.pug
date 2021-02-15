@@ -1,0 +1,9 @@
+html
+	head
+		title Restaurant Manager Users Page
+body
+	include ../partials/header
+	br
+	each user in users
+		a(href="users/" + user._id) #{user.username}
+		br
